@@ -1,0 +1,58 @@
+
+ 
+Input, Select, Button {
+	border: none;
+	padding: .9em;
+	font-size:1.1em;
+	color: #06283D;
+	width: 80%;
+	margin-bottom: 5px;
+	background: transparent;
+}
+
+Input:focus, Select:focus {
+	outline: none;
+}
+.outerFrame {
+	background-color: #edebc0d2;
+	height: 100vh;
+}
+
+h2 {
+	font-size:3.5em;
+}
+
+Button {
+	width: 50%;
+	padding:.3em;
+	font-size:2.2em;
+	border: none;
+	background-color: none;
+}
+
+Button {
+	font-size: 2em;
+}
+
+
+.form {
+	border: 1px solid #54ade4;
+	border-radius: .5em;
+	background-color: #FFFDD0;
+	/* margin-bottom: 1em; */
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0vh;
+	/* padding: 1.2em; */
+	text-align: center;
+	width: 30%;
+}
+
+.extra {
+	padding: 8rem;
+}
+
+h2 {
+	color: #011;
+	font-size:2em;
+}

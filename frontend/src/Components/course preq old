@@ -1,0 +1,77 @@
+const handleAddPreq=()=>{
+		const preq=[...prerequisiteList,[]]
+		setPrerequisiteList(preq);
+	}
+	const handlePreqChange=(onChangeValue,i)=>{
+		const inputPreq=[...prerequisiteList]
+		inputPreq[i]=onChangeValue.target.value
+		setPrerequisiteList(inputPreq)
+	}
+	const handlePreqDelete=(i)=>{
+		const deletePreq=[...prerequisiteList]
+		deletePreq.splice(i,1)
+		setPrerequisiteList(deletePreq)
+	}
+	// END
+
+	// to handle add and delete of specialisation 
+	const handleAddSpec=()=>{
+		const spec=[...specialisationList,[]]
+		setSpecialisationList(spec);
+	}
+	const handleSpecChange=(onChangeValue,i)=>{
+		const inputSpec=[...specialisationList]
+		inputSpec[i]=onChangeValue.target.value
+		setSpecialisationList(inputSpec)
+	}
+	const handleSpecDelete=(i)=>{
+		const deleteSpec=[...specialisationList]
+		deleteSpec.splice(i,1)
+		setSpecialisationList(deleteSpec)
+	}
+
+
+	<FormGroup row>
+					<Label for="coursePrerequisite" sm={2}>Prerequisite</Label>
+					<div>
+						{prerequisiteList.map((data, i)=>{
+							return(
+								<div>
+									<select value={data} onChange={e=>handlePreqChange(e, i)} name = "coursePrerequisite" placeholder="Prerequisite" multiple>
+										<option>Dummy preq</option>
+										<option>Dummy preq</option>
+										<option>Dummy preq</option>
+										<option>Dummy preq</option>
+										<option>Dummy preq</option>
+										<option>Dummy preq</option>
+	 								</select>
+									{/* <input value={data} onChange={e=>handlePreqChange(e, i)} /> */}
+									<button onClick={()=>handlePreqDelete(i)}>X</button>
+								</div>
+							)
+						})}
+					</div>
+					<button onClick={()=>handleAddPreq()}>Add Prerequisite</button>
+				</FormGroup>
+
+				<FormGroup row>
+					<Label for="courseSpecialisation" sm={2}>Specialisation</Label>
+					<div>
+						{specialisationList.map((data, i)=>{
+							return(
+								<div>
+									<select value={data} onChange={e=>handleSpecChange(e, i)} name = "courseSpecialisation" multiple>
+	 								<option>Dummy spec</option>
+	 								<option>Dummy spec</option>
+	 								<option>Dummy spec</option>
+	 								<option>Dummy spec</option>
+	 								<option>Dummy spec</option>
+	 								<option>Dummy spec</option>
+	 							</select>
+									<button onClick={()=>handleSpecDelete(i)}>X</button>
+								</div>
+							)
+						})}
+					</div>
+					<button onClick={()=>handleAddSpec()}>Add Specialisation</button>
+				</FormGroup>

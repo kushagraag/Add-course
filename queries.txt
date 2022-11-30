@@ -1,0 +1,17 @@
+insert into department values(1, 100, "admin");
+insert into department values(2, 120, "security");
+
+
+insert into employee values(1, "Punit.Kumar@one.com", "Punit", "Kumar", "1234", "Mr", 1);
+insert into employee values(2, "Ranya.Sunder@one.com", "Ranya", "Sunder", "1234", "Ms", 2);
+
+insert into specialisation values(1, "S1", 20, "desc1", "AIML", 3);
+insert into specialisation values(2, "S2", 20, "desc1", "Network", 3);
+
+insert into course values(1, 100, "a1", 4, "abb", "ML", "Mon 9:30", 2, 3, 1);
+insert into course values(2, 100, "b1", 4, "bba", "CS", "Mon 9:30", 2, 3, 2);
+insert into course values(3, 120, "c1", 4, "qwerr", "CS2", "Mon 9:30", 2, 3,null);
+
+
+insert into course_prerequisite values(1, 2);
+

@@ -1,0 +1,71 @@
+project updates 
+
+backend
+course bean done, fk to faculty/employee left
+course_prerequisite bean done, fk not defined, 2 needed
+departments bean done, fk not needed yet
+employee bean done, fk to department left
+specialisation bean done, fk not needed yet
+Specialisation_course bean done, fk not defined, 2 needed
+
+
+
+plan
+
+DONE REMARKS -> working with dummy data, working with postman login, test with frontend pending
+create employee login same as student in lab 6 (for now insert data manually and check) for that, create service/EmployeeService then create login in dao/impl/EmployeeDAOImpl and impl/EmployeeDAO interface
+
+
+next step is to create a form jisse values can be taken 
+
+DONE and WORKING LOGIN
+create react frontend for login and course form
+login is simple as usual
+
+Done all 
+in course form, all basic details + 2 dropdowns, one for prerequite and other for specialisation
+for prerequisite show already added courses, for specialisation show name from specialisation table (spc -> specialisation)
+IN COURSE ADD BTN TO ADD MORE DAYS, MORE TIME,  MORE PREREQUISITE, MORE SPECIALISATION
+
+done
+on submit form, put basic details directly to course table; 
+put prerequisite to course_prerequisite table with courseid; 
+and spc in spc_course table with course_id;
+
+
+frontend done 
+
+
+
+
+backend 
+tables created
+department to employee with dept_id as FK done
+course has FK from employee as faculty, skipping for now
+
+
+
+
+
+Work Left:
+creating many many relation btwn spclsn or one many(yet to confirm)
+create controller for course
+create service for course
+add function in DAOImpl for course
+send data from frontend properly (create axios services in frontend and any other service needed)
+hopefully after above code will work perfectly
+
+
+Queries:
+if specialisation course has one to many relation then why dont add a field in course table itself means it have many many relation
+
+
+
+
+
+
+
+
+
+
+
