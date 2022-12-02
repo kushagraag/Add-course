@@ -35,23 +35,22 @@ public class Course {
     @Column(nullable = false)
     private String schedule;
 
-//    @ManyToOne(cascade=CascadeType.ALL)
-//    @JoinColumn(name="facultyId")
-//    private Employee faculty;
+    @Column
+    private String prerequisite;
+
+    @ManyToOne(cascade=CascadeType.ALL)
+    @JoinColumn(name="facultyId")
+    private Employee faculty;
 
     @ManyToOne(cascade=CascadeType.ALL)
     @JoinColumn(name = "specialisationId")
     private Specialisation specialisation;
 
-    @ManyToMany (fetch = FetchType.EAGER, targetEntity = Course.class, cascade = { CascadeType.ALL })
-    @JoinTable (name = "course_prerequisite")
-    private List<Course> prerequisites;
-
 
     public Course() {
     }
 
-    public Course(String course_code, String name, String description, Integer year, Integer term, Integer credits, Integer capacity, String schedule, List<Course> prerequisites, Specialisation specialisation) {
+    public Course(String course_code, String name, String description, Integer year, Integer term, Integer credits, Integer capacity, String schedule, String prerequisite, Specialisation specialisation, Employee faculty) {
         this.course_code = course_code;
         this.name = name;
         this.description = description;
@@ -60,8 +59,8 @@ public class Course {
         this.credits = credits;
         this.capacity = capacity;
         this.schedule = schedule;
-        this.prerequisites = prerequisites;
-//        this.faculty = faculty;
+        this.prerequisite = prerequisite;
+        this.faculty = faculty;
         this.specialisation = specialisation;
     }
 
@@ -129,14 +128,6 @@ public class Course {
         this.capacity = capacity;
     }
 
-    public List<Course> getPrerequisites() {
-        return prerequisites;
-    }
-
-    public void setPrerequisites(List<Course> prerequisites) {
-        this.prerequisites = prerequisites;
-    }
-
     public String getSchedule() {
         return schedule;
     }
@@ -145,20 +136,28 @@ public class Course {
         this.schedule = schedule;
     }
 
-//    public Employee getFaculty() {
-//        return facult<>y;
-//    }
-//
-//    public void setFaculty(Employee faculty) {
-//        this.faculty = faculty;
-//    }</>
-
     public Specialisation getSpecialisation() {
         return specialisation;
     }
 
     public void setSpecialisation(Specialisation specialisation) {
         this.specialisation = specialisation;
+    }
+
+    public String getPrerequisite() {
+        return prerequisite;
+    }
+
+    public void setPrerequisite(String prerequisite) {
+        this.prerequisite = prerequisite;
+    }
+
+    public Employee getFaculty() {
+        return faculty;
+    }
+
+    public void setFaculty(Employee faculty) {
+        this.faculty = faculty;
     }
 
     @Override
@@ -173,8 +172,8 @@ public class Course {
                 ", credits=" + credits +
                 ", capacity=" + capacity +
                 ", schedule='" + schedule + '\'' +
-//                ", faculty=" + faculty +
-                ", prerequisites=" + prerequisites +
+                ", prerequisite='" + prerequisite + '\'' +
+                ", faculty=" + faculty +
                 ", specialisation=" + specialisation +
                 '}';
     }

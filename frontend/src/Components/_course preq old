@@ -75,3 +75,5 @@ const handleAddPreq=()=>{
 					</div>
 					<button onClick={()=>handleAddSpec()}>Add Specialisation</button>
 				</FormGroup>
+
+

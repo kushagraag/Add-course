@@ -4,6 +4,7 @@ import React, {useState, useEffect} from "react";
 import loginService from './services/login';
 import "./App.css"
 import courseEntryService from './services/course';
+import AddCourse from "./Components/_AddCourses";
 
 function App() {
 
@@ -59,6 +60,9 @@ function App() {
       { user===null &&
         <Course submitCourseEntry={submitCourse}></Course>
       }
+      {/* { user===null &&
+        <AddCourse></AddCourse>
+      } */}
 
     </div>
 
