@@ -39,8 +39,8 @@ public class Course {
     private String prerequisite;
 
     @ManyToOne(cascade=CascadeType.ALL)
-    @JoinColumn(name="facultyId")
-    private Employee faculty;
+    @JoinColumn(name="employeeId")
+    private Employee employee;
 
     @ManyToOne(cascade=CascadeType.ALL)
     @JoinColumn(name = "specialisationId")
@@ -50,7 +50,7 @@ public class Course {
     public Course() {
     }
 
-    public Course(String course_code, String name, String description, Integer year, Integer term, Integer credits, Integer capacity, String schedule, String prerequisite, Specialisation specialisation, Employee faculty) {
+    public Course(String course_code, String name, String description, Integer year, Integer term, Integer credits, Integer capacity, String schedule, String prerequisite, Specialisation specialisation, Employee employee) {
         this.course_code = course_code;
         this.name = name;
         this.description = description;
@@ -60,7 +60,7 @@ public class Course {
         this.capacity = capacity;
         this.schedule = schedule;
         this.prerequisite = prerequisite;
-        this.faculty = faculty;
+        this.employee = employee;
         this.specialisation = specialisation;
     }
 
@@ -153,11 +153,11 @@ public class Course {
     }
 
     public Employee getFaculty() {
-        return faculty;
+        return employee;
     }
 
     public void setFaculty(Employee faculty) {
-        this.faculty = faculty;
+        this.employee = faculty;
     }
 
     @Override
@@ -173,7 +173,7 @@ public class Course {
                 ", capacity=" + capacity +
                 ", schedule='" + schedule + '\'' +
                 ", prerequisite='" + prerequisite + '\'' +
-                ", faculty=" + faculty +
+                ", employeeId=" + employee +
                 ", specialisation=" + specialisation +
                 '}';
     }

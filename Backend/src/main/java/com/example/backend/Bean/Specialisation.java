@@ -13,19 +13,19 @@ public class Specialisation implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer specialisation_id;
 
-    @Column(name = "code")
+    @Column(name = "code", unique = true, nullable = false)
     private String code;
 
-    @Column(name = "name")
+    @Column(name = "name", nullable = false)
     private String name;
 
     @Column
     private String description;
 
-    @Column()
+    @Column(nullable = false)
     private Integer year;
 
-    @Column(name = "creditsRequired")
+    @Column(name = "creditsRequired", nullable = false)
     private Integer credits_required;
 
     public Specialisation() {
